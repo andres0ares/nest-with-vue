@@ -1,20 +1,32 @@
 <template>
     <div class="root">
+        
         <h4>Selecione as disciplinas pagas</h4>
-        <DisCard :data="teste" />
+            <button @click="handlePeriodo(1)">test 1</button>
+            <button @click="handlePeriodo(2)">test 2</button>
+        <div>
+
+            <DisCard v-for="(disciplina, index) in exibDis.data" :data="disciplina" 
+                :key="disciplina.id" :index="index"
+                :selected="disciplina.selected"
+                @click="handleClick(disciplina.id)"
+            />
+
+        </div>
+        
     </div>
 </template>
+
+
 
 <script>
 
 import DisCard from './DisCard.vue'
+import disciplinas from '../assets/disciplinas'
 
-const test = {
-    name: 'Disciplina hoho',
-    periodo: 1,
-    creditos: 3,
-    categoria: 'Obrigatória'
-}
+import { reactive } from 'vue'
+
+let dis = disciplinas 
 
 export default {
 
@@ -22,25 +34,54 @@ export default {
     components: { 
         DisCard 
     },
-    data () {
+    setup() {
+
+        let disciplinas = reactive(dis)
+        let exibDis = reactive({data: disciplinas.filter(el => el.periodo == 1)})
+
+    
+       
+        const handlePeriodo = (periodo) => {
+
+            exibDis.data = disciplinas.filter(el => el.periodo == periodo)
+            console.log("exibDis", exibDis)
+        }
+
+        const handleClick = (id) => {
+
+            const idx = disciplinas.findIndex(el => el.id == id)
+            disciplinas[idx].selected = !disciplinas[idx].selected
+            
+        }
+
+        return {disciplinas, exibDis, handleClick, handlePeriodo}
+        
+    },
+    data() {
         return {
-            teste: test
+            
         }
     },
     props: {
         
+    },
+    methods: {
+        
     }
 }
 
-console.log(test)
-
 </script>
 
+
+
 <style scoped>
+
 .root {
+    position: relative;
+    overflow: hidden;
+    display: block;
     width: 100%;
     padding: 10px;
-    background-color: aqua;
 }
 
 </style>

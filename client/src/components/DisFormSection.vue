@@ -1,5 +1,5 @@
 <template>
-    <div class="root">
+    <div class="df-root">
         
 
     </div>
@@ -17,7 +17,10 @@ export default {
 </script>
 
 <style scoped>
-.root {
+
+.df-root {
+    position: relative;
+    float: left;
     width: 100%;
     height: 50px;
     background-color: red;

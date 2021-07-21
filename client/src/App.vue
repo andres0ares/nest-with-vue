@@ -37,6 +37,7 @@ body, html {
   
 }
 .section {
+  position: static;
   float: left;
   width: 50%;
 }
