@@ -2,8 +2,17 @@
     <div class="root">
         
         <h4>Selecione as disciplinas pagas</h4>
-            <button @click="handlePeriodo(1)">test 1</button>
-            <button @click="handlePeriodo(2)">test 2</button>
+            <button @click="handlePeriodo(1)">P1</button>
+            <button @click="handlePeriodo(2)">P2</button>
+            <button @click="handlePeriodo(3)">P3</button>
+            <button @click="handlePeriodo(4)">P4</button>
+            <button @click="handlePeriodo(5)">P5</button>
+            <button @click="handlePeriodo(6)">P6</button>
+            <button @click="handlePeriodo(7)">P7</button>
+            <button @click="handlePeriodo(8)">P8</button>
+            <button @click="handlePeriodo(9)">P9</button>
+            <button @click="handlePeriodo(10)">P10</button>
+            
         <div>
 
             <DisCard v-for="(disciplina, index) in exibDis.data" :data="disciplina" 

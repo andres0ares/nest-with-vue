@@ -4,6 +4,12 @@ import { AppModule } from './app.module';
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
   app.setGlobalPrefix('api');
-  await app.listen(3000);
+
+  let port = process.env.PORT;
+  if (port == null || port == "") {
+    //port = 8000;
+  }
+  
+  await app.listen(port);
 }
 bootstrap();

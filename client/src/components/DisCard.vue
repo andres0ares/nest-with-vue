@@ -1,5 +1,6 @@
 <template>
     <div class="d-root" v-bind:class="{ active: selected }" @click="isActive = !isActive">
+        
         <p> {{ data.name }} <span v-bind:class="[ isActive ? dCreActive : dCre ]">- {{ data.creditos }} créditos</span></p>
         <p v-bind:class="[ isActive ? dCatActive : dCat ]"> {{ data.categoria }} </p>
 
