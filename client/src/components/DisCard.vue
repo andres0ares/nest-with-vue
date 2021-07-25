@@ -1,22 +1,18 @@
 <template>
-    <div class="d-root" v-bind:class="{ active: selected }" @click="isActive = !isActive">
+    <div class="d-root" v-bind:class="{ 'active': selected }" >
         
-        <p> {{ data.name }} <span v-bind:class="[ isActive ? dCreActive : dCre ]">- {{ data.creditos }} créditos</span></p>
-        <p v-bind:class="[ isActive ? dCatActive : dCat ]"> {{ data.categoria }} </p>
+        <p> {{ data.name }} <span v-bind:class="[ selected ? 'dCreActive' : 'dCre' ]">- {{ data.creditos }} créditos</span></p>
+        <p v-bind:class="[ selected ? 'dCatActive' : 'dCat' ]"> {{ data.categoria }} </p>
 
     </div>
 </template>
+
 
 <script> 
 
 
 export default {
     name: 'DisCard',
-    data () {
-        return {
-            isActive: false
-        }
-    },
     props: {
         data: Object,
         index: Number,

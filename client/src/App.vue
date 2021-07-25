@@ -1,24 +1,14 @@
 <template>
-  <HeaderNav msg="Em desenvolvimento" title="Worked That Lil Bitch"/>
-  <div class="section"><DisSection/></div>
-  <div class="section"><DisFormSection /></div>
-  <img alt="Vue logo" src="./assets/logo.png">  
-  <HelloWorld msg="Welcome Bitch"/>
+  <Index/>
 </template>
 
 <script> 
-import HelloWorld from './components/HelloWorld.vue'
-import HeaderNav from './components/HeaderNav.vue'
-import DisSection from './components/DisSection.vue'
-import DisFormSection from './components/DisFormSection.vue'
+import Index from './components/Index.vue'
 
 export default {
   name: 'App',
   components: {
-    HelloWorld,
-    HeaderNav,
-    DisSection,
-    DisFormSection
+    Index
   }
 }
 </script>
@@ -36,11 +26,7 @@ body, html {
   color: #2c3e50;
   
 }
-.section {
-  position: static;
-  float: left;
-  width: 50%;
-}
+
 </style>
 
 //margin-top: 60px;

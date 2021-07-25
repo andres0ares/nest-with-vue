@@ -2,18 +2,13 @@
     <div class="root">
         
         <h4>Selecione as disciplinas pagas</h4>
-            <button @click="handlePeriodo(1)">P1</button>
-            <button @click="handlePeriodo(2)">P2</button>
-            <button @click="handlePeriodo(3)">P3</button>
-            <button @click="handlePeriodo(4)">P4</button>
-            <button @click="handlePeriodo(5)">P5</button>
-            <button @click="handlePeriodo(6)">P6</button>
-            <button @click="handlePeriodo(7)">P7</button>
-            <button @click="handlePeriodo(8)">P8</button>
-            <button @click="handlePeriodo(9)">P9</button>
-            <button @click="handlePeriodo(10)">P10</button>
             
-        <div>
+        <button v-for="button in buttons.data" :key="button" @click="handlePeriodo(button.id)"
+        v-bind:class="[ button.click ? 'btnOn' : 'btnOff' ]">
+            P{{button.id}}
+        </button>
+            
+        <div class="cards">
 
             <DisCard v-for="(disciplina, index) in exibDis.data" :data="disciplina" 
                 :key="disciplina.id" :index="index"
@@ -30,11 +25,10 @@
 
 <script>
 
-import DisCard from './DisCard.vue'
-import disciplinas from '../assets/disciplinas'
-
 import { reactive } from 'vue'
 
+import DisCard from './DisCard.vue'
+import disciplinas from '../assets/disciplinas'
 let dis = disciplinas 
 
 export default {
@@ -48,12 +42,27 @@ export default {
         let disciplinas = reactive(dis)
         let exibDis = reactive({data: disciplinas.filter(el => el.periodo == 1)})
 
-    
+        let buttons = reactive({data: []})
+
+        for(let i = 1; i < 11; i++) {
+            buttons.data.push({id: i, click: false})
+        }
+
+        buttons.data[0].click = true;
        
         const handlePeriodo = (periodo) => {
 
             exibDis.data = disciplinas.filter(el => el.periodo == periodo)
-            console.log("exibDis", exibDis)
+
+            for(let i = 0; i < 10; i++) {
+                if(buttons.data[i].id != periodo){
+                    buttons.data[i].click = false
+                }
+            }
+
+            buttons.data[periodo -1].click = true;
+
+
         }
 
         const handleClick = (id) => {
@@ -63,24 +72,15 @@ export default {
             
         }
 
-        return {disciplinas, exibDis, handleClick, handlePeriodo}
+        return {disciplinas, exibDis, buttons, handleClick, handlePeriodo}
         
     },
     data() {
-        return {
-            
-        }
-    },
-    props: {
-        
-    },
-    methods: {
-        
+        return {}
     }
 }
 
 </script>
-
 
 
 <style scoped>
@@ -93,4 +93,27 @@ export default {
     padding: 10px;
 }
 
+.btnOn {
+    background-color: #4361ee;
+    color: #eaeaea;
+    padding: 5px;
+    border-radius: 7px;
+    border: 2px solid #4361ee;
+    margin: 6px;
+}
+
+.btnOff {
+    padding: 5px;
+    border-radius: 7px;
+    border: 2px solid grey;
+    margin: 2px;
+}
+
+.btnOff:hover {
+    border: 2px solid #4361ee;
+}
+
+.cards {
+    margin-top: 20px;
+}
 </style>
