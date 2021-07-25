@@ -440,15 +440,17 @@ const disciplinas = [
         creditos: 2,
         categoria: 'Complementar Obrigatoria',
         selected: false
-    }, {
-        id: 56,
-        name: 'ESTAGIO SUPERVISIONADO - ENGENHARIA DA COMPUTACAO',
-        codigo: 'GDSCO0029',
-        periodo: 10,
-        creditos: 20,
-        categoria: 'Obrigatória',
-        selected: false
     }
 ]
 
 export default disciplinas
+
+// , {
+//     id: 56,
+//     name: 'ESTAGIO SUPERVISIONADO - ENGENHARIA DA COMPUTACAO',
+//     codigo: 'GDSCO0029',
+//     periodo: 10,
+//     creditos: 20,
+//     categoria: 'Obrigatória',
+//     selected: false
+// }

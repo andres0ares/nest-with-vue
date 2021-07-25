@@ -13,7 +13,7 @@
             <DisCard v-for="(disciplina, index) in exibDis.data" :data="disciplina" 
                 :key="disciplina.id" :index="index"
                 :selected="disciplina.selected"
-                @click="handleClick(disciplina.id)"
+                @click="handleClick(disciplina.id, getObj)"
             />
 
         </div>
@@ -65,15 +65,20 @@ export default {
 
         }
 
-        const handleClick = (id) => {
+        const handleClick = (id, getObj) => {
 
             const idx = disciplinas.findIndex(el => el.id == id)
             disciplinas[idx].selected = !disciplinas[idx].selected
+
+            getObj(disciplinas)
             
         }
 
         return {disciplinas, exibDis, buttons, handleClick, handlePeriodo}
         
+    },
+    props: {
+        getObj: Function
     },
     data() {
         return {}
@@ -100,6 +105,7 @@ export default {
     border-radius: 7px;
     border: 2px solid #4361ee;
     margin: 6px;
+    cursor: pointer;
 }
 
 .btnOff {
@@ -107,10 +113,12 @@ export default {
     border-radius: 7px;
     border: 2px solid grey;
     margin: 2px;
+    cursor: pointer;
 }
 
 .btnOff:hover {
     border: 2px solid #4361ee;
+    background-color: #5e7bfa;
 }
 
 .cards {

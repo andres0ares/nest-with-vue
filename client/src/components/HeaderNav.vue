@@ -3,7 +3,7 @@
     <div class="bar">
         <p class="msg">{{ msg }}</p>
     </div>
-    <div class="root">
+    <div class="root-header">
         <h4 class="title">{{ title }}</h4>
     </div>
 </template>
@@ -21,7 +21,7 @@ export default {
 
 
 <style scoped>
-.root {
+.root-header {
     height: 50px;
     width: 100%;
     box-shadow: 0 7px 5px -5px gray;

@@ -37,14 +37,19 @@ export default {
     min-height: 130px;
     margin: 15px 2% 0 6%;
     max-width: 40%;
+    cursor: pointer;
 
     border-radius: 10px;
     border: 3px solid grey;
+}
+.d-root:hover {
+    border: 3px solid #4361ee;
 }
 
 .active {
     background-color: #1fc8db;
     background-image: linear-gradient(to bottom right, #4361ee 50%, #4895ef 75%);
+    border: 3px solid #4361ee;
     color: white;
 }
 .dCatActive {
