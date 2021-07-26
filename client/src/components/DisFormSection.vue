@@ -54,7 +54,7 @@ export default {
 <style scoped>
 
 .df-root {
-    padding: 10px;
+    padding: 10px 0;
     float: left;
     width: 100%;
 }

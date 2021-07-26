@@ -95,7 +95,7 @@ export default {
     overflow: hidden;
     display: block;
     width: 100%;
-    padding: 10px;
+    padding: 10px 0;
 }
 
 .btnOn {

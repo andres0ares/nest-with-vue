@@ -75,8 +75,19 @@ export default {
 
 @media only screen and (max-width: 480px) {
   .d-root {
-    width: 80%;
+    min-width: 40%;
+    max-width: none;
+    min-height: 100px;
+    margin: 2%;
+    font-size: 10px;
+    width: 30%;
     
   }
+  .dCat {
+    font-size: 14px;
+  }
+  .dCatActive {
+    font-size: 14px;
+  } 
 }
 </style>

@@ -80,4 +80,11 @@ export default {
   color: #4361ee;
 }
 
+@media only screen and (max-width: 480px) {
+  .section {
+    width: 100%;
+    
+  }
+}
+
 </style>
