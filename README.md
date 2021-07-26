@@ -1,8 +1,8 @@
 
 ## Description
 
-Desenvolvido como NestJS e VueJS, com o fim de aprendizagem.
-Resultado, visite: https://guarded-waters-57914.herokuapp.com
+Desenvolvido com o NestJS e VueJS, com o fim de aprendizagem.
+Resultado, visite: https://fluxo.oandre.com
 
 ## Installation
 

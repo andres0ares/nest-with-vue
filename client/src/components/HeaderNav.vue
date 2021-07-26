@@ -1,11 +1,16 @@
 
 <template>
     <div class="bar">
-        <p class="msg">{{ msg }}</p>
+        <p class="msg">{{ msg }} | 
+            <a href="https://github.com/andres0ares/nest-with-vue"
+            class="link"
+            target="_blank">GitHub</a>
+        </p>
     </div>
     <div class="root-header">
         <h4 class="title">{{ title }}</h4>
     </div>
+    
 </template>
 
 <script>
@@ -41,6 +46,10 @@ export default {
     margin: 0 0 0 25px;
     padding-top: 20px; 
     color: grey;
+}
+.link {
+    color: #eaeaea;
+    text-decoration: none;
 }
 
 </style>
